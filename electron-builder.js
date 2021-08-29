@@ -6,7 +6,7 @@ const options = {
     appId: "com.my.app",
     artifactName: "${productName}-${buildVersion}-${arch}.${ext}",
     files: [
-        "dist",
+        "out",
         "index.html"
     ],
     publish: {
@@ -16,7 +16,7 @@ const options = {
         private: true
     },
     win: {
-        sign: undefined
+        // sign: undefined
     },
     mac: {
         identity: null,
@@ -25,6 +25,14 @@ const options = {
         extendInfo: {
             NSAppleEventsUsageDescription: 'The app wants to enable auto launch on login.',
             NSCameraUsageDescription: 'The app wants to use the camera.',
+        }
+    },
+
+    snap: {
+        publish: {
+            provider: "snapStore",
+            channels: "edge",
+            repo: "electron-builder-test"
         }
     },
 
@@ -39,7 +47,7 @@ const options = {
 
         },
 
-        target: ["AppImage"]
+        target: ["snap"]
     },
 };
 

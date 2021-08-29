@@ -8,8 +8,8 @@
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
     "start": "pnpm build && electron ./dist/main.js",
-    "dist": "pnpm electron-builder --publish never",
-    "publish": "pnpm electron-builder --publish always"
+    "pack": "pnpm electron-builder --publish never",
+    "dist": "pnpm electron-builder --publish always"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
