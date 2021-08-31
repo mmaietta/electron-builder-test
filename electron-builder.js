@@ -19,7 +19,6 @@ const options = {
         // sign: undefined
     },
     mac: {
-        identity: null,
         icon: "icon.icns",
         target: 'zip',
         extendInfo: {
