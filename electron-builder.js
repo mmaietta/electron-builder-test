@@ -20,7 +20,11 @@ const options = {
     },
     mac: {
         icon: "icon.icns",
-        target: 'zip',
+        target: [{
+            target: 'dmg',
+            // eslint-disable-next-line no-undef
+            arch: process.env.ARCH || 'arm64'
+        }],
         extendInfo: {
             NSAppleEventsUsageDescription: 'The app wants to enable auto launch on login.',
             NSCameraUsageDescription: 'The app wants to use the camera.',
