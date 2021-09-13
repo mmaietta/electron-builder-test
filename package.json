@@ -26,7 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "electron": "^13.1.7",
-    "electron-builder": "^22.13.1",
+    "electron-builder": "^22.14.2",
     "eslint": "^7.32.0",
     "lazy-val": "^1.0.5",
     "typescript": "^4.3.5"
