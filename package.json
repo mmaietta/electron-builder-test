@@ -34,6 +34,6 @@
   "dependencies": {
     "builder-util-runtime": "^8.8.1",
     "electron-log": "^4.4.1",
-    "electron-updater": "^4.5.1"
+    "electron-updater": "^5.0.1"
   }
 }
