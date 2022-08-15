@@ -12,8 +12,7 @@ const options = {
     publish: {
         provider: 'github',
         repo: 'electron-builder-test',
-        owner: 'mmaietta',
-        private: true
+        owner: 'mmaietta'
     },
     win: {
         // sign: undefined
@@ -50,7 +49,7 @@ const options = {
 
         },
 
-        target: ["deb", "rpm"]
+        target: ["deb", "AppImage"]
     },
 };
 
