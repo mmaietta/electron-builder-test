@@ -50,7 +50,7 @@ const options = {
 
         },
 
-        target: ["snap"]
+        target: ["deb", "rpm"]
     },
 };
 
