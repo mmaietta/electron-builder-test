@@ -20,7 +20,7 @@ const options = {
     mac: {
         icon: "icon.icns",
         target: [{
-            target: 'dmg',
+            target: 'zip',
             // eslint-disable-next-line no-undef
             arch: process.env.ARCH || 'arm64'
         }],
@@ -49,7 +49,7 @@ const options = {
 
         },
 
-        target: ["deb", "AppImage"]
+        target: ["deb", "AppImage", "rpm"]
     },
 };
 
