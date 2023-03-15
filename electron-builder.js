@@ -18,6 +18,7 @@ const options = {
         repo: 'electron-builder-test',
         owner: 'mmaietta'
     },
+    downloadAlternateFFmpeg: true,
     win: {
         // sign: undefined
     },
