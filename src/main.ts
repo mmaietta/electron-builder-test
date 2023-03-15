@@ -24,17 +24,21 @@ function createWindow() {
 // Some APIs can only be used after this event occurs.
 app.on("ready", () => {
   createWindow();
-  if (process.env.NODE_ENV !== 'production') {
+  // if (process.env.NODE_ENV !== 'production') {
     const log = require("electron-log")
     log.transports.file.level = "debug"
     autoUpdater.logger = log
-  }
-  
+  // }
+
+  autoUpdater.addListener('update-downloaded', () => {
+    autoUpdater.quitAndInstall()
+  })
   // autoUpdater.addAuthHeader(`Bearer ${license?.attributes?.metadata?.token ?? ''}`)
   autoUpdater.checkForUpdatesAndNotify({
     body: 'hellooooo. there is an update',
     title: "hell yeah"
   })
+
 
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the

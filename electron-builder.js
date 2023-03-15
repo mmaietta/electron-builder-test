@@ -9,6 +9,10 @@ const options = {
         "out",
         "index.html"
     ],
+    // publish: {
+    //     provider: 'generic',
+    //     url: "test.test.com"
+    // },
     publish: {
         provider: 'github',
         repo: 'electron-builder-test',
@@ -49,7 +53,7 @@ const options = {
 
         },
 
-        target: ["deb", "AppImage", "rpm"]
+        target: ["deb"] //, "AppImage", "rpm"]
     },
 };
 
