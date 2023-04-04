@@ -1,6 +1,8 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import { autoUpdater } from 'electron-updater';
+// import * as sqlite3 from "sqlite3"
+import * as permissions from "node-mac-permissions";
 
 function createWindow() {
   // Create the browser window.
@@ -45,6 +47,8 @@ app.on("ready", () => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
+
+  // const db = new sqlite3.Database('temp.db')
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common

@@ -9,6 +9,10 @@ const options = {
         "out",
         "index.html"
     ],
+    // asarUnpack: [
+    //     "**.*node",
+    //     "node_modules/argparse"
+    // ],
     // publish: {
     //     provider: 'generic',
     //     url: "test.test.com"
@@ -18,16 +22,15 @@ const options = {
         repo: 'electron-builder-test',
         owner: 'mmaietta'
     },
-    downloadAlternateFFmpeg: true,
     win: {
         // sign: undefined
     },
     mac: {
         icon: "icon.icns",
         target: [{
-            target: 'zip',
+            target: 'dir',
             // eslint-disable-next-line no-undef
-            arch: process.env.ARCH || 'arm64'
+            arch: 'x64'
         }],
         extendInfo: {
             NSAppleEventsUsageDescription: 'The app wants to enable auto launch on login.',
