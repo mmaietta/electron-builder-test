@@ -3,6 +3,7 @@ import * as path from "path";
 import { autoUpdater } from 'electron-updater';
 // import * as sqlite3 from "sqlite3"
 import * as permissions from "node-mac-permissions";
+import * as argon from 'argon2'
 
 function createWindow() {
   // Create the browser window.
@@ -49,6 +50,8 @@ app.on("ready", () => {
   });
 
   // const db = new sqlite3.Database('temp.db')
+  permissions
+  argon
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
