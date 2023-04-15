@@ -3,7 +3,7 @@ import * as path from "path";
 import { autoUpdater } from 'electron-updater';
 // import * as sqlite3 from "sqlite3"
 import * as permissions from "node-mac-permissions";
-import * as argon from 'argon2'
+// import * as argon from 'argon2'
 
 function createWindow() {
   // Create the browser window.
@@ -37,10 +37,10 @@ app.on("ready", () => {
     autoUpdater.quitAndInstall()
   })
   // autoUpdater.addAuthHeader(`Bearer ${license?.attributes?.metadata?.token ?? ''}`)
-  autoUpdater.checkForUpdatesAndNotify({
-    body: 'hellooooo. there is an update',
-    title: "hell yeah"
-  })
+  // autoUpdater.checkForUpdatesAndNotify({
+  //   body: 'hellooooo. there is an update',
+  //   title: "hell yeah"
+  // })
 
 
   app.on("activate", function () {
@@ -50,8 +50,8 @@ app.on("ready", () => {
   });
 
   // const db = new sqlite3.Database('temp.db')
-  permissions
-  argon
+  console.log('status:', permissions.getAuthStatus('accessibility'))
+  // argon
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
