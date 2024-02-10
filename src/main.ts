@@ -2,7 +2,7 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import { autoUpdater } from 'electron-updater';
 // import * as sqlite3 from "sqlite3"
-import * as permissions from "node-mac-permissions";
+// import * as permissions from "node-mac-permissions";
 // import * as argon from 'argon2'
 
 function createWindow() {
@@ -50,7 +50,7 @@ app.on("ready", () => {
   });
 
   // const db = new sqlite3.Database('temp.db')
-  console.log('status:', permissions.getAuthStatus('accessibility'))
+  // console.log('status:', permissions.getAuthStatus('accessibility'))
   // argon
 });
 

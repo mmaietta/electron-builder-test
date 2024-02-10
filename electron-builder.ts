@@ -25,42 +25,49 @@ const options: builder.Configuration = {
     owner: "mmaietta",
   },
   afterPack: async (context: builder.AfterPackContext) => {
-    if (context.electronPlatformName !== 'darwin' || context.arch === builder.Arch.universal) {
-      await addElectronFuses(context)
-    }
+    await addElectronFuses(context)
   },
   win: {
     // sign: undefined
+    target: [
+      {
+        target: "nsis",
+        arch: [
+          "x64", 
+          "arm64"
+        ],
+      },
+    ]
   },
   mac: {
     icon: "icon.icns",
     target: [
       {
-        target: "dir",
+        target: "zip",
         arch: [
           // "x64", 
-          // "arm64",
-          "universal",
+          "arm64",
+          // "universal",
         ],
       },
     ],
-    extendInfo: {
-      NSAppleEventsUsageDescription:
-        "The app wants to enable auto launch on login.",
-      NSCameraUsageDescription: "The app wants to use the camera.",
-    },
-    hardenedRuntime: true,
+    // extendInfo: {
+    //   NSAppleEventsUsageDescription:
+    //     "The app wants to enable auto launch on login.",
+    //   NSCameraUsageDescription: "The app wants to use the camera.",
+    // },
+    // hardenedRuntime: true,
     // gatekeeperAssess: true,
-    // identity: null
+    identity: null
   },
 
-  snap: {
-    publish: {
-      provider: "snapStore",
-      channels: "edge",
-      repo: "electron-builder-test",
-    },
-  },
+  // snap: {
+  //   publish: {
+  //     provider: "snapStore",
+  //     channels: "edge",
+  //     repo: "electron-builder-test",
+  //   },
+  // },
 
   linux: {
     icon: "icon.icns",
@@ -70,7 +77,7 @@ const options: builder.Configuration = {
       Encoding: "UTF-8",
     },
 
-    target: ["deb"], //, "AppImage", "rpm"]
+    target: ["deb", "AppImage", "rpm"]
   },
 };
 
