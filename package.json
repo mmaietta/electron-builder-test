@@ -8,8 +8,8 @@
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
     "start": "pnpm build && electron ./out/main.js",
-    "app:pack": "pnpm electron-builder --publish never",
-    "app:dist": "pnpm electron-builder --publish always",
+    "app:pack": "electron-builder --config electron-builder-config.js --publish never",
+    "app:dist": "electron-builder --config electron-builder-config.js --publish always",
     "postinstall": "electron-builder install-app-deps"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
@@ -28,17 +28,19 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "@types/node": "^18.7.4",
+    "@types/semver": "^7.5.7",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
+    "basic-ftp": "^5.0.4",
     "electron": "^13.1.7",
-    "electron-builder": "^24.1.2",
+    "electron-builder": "^24.13.0",
     "eslint": "^7.32.0",
     "lazy-val": "^1.0.5",
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "dotenv": "^16.4.4",
     "electron-log": "^4.4.1",
-    "electron-updater": "^5",
-    "node-mac-permissions": "^2.3.0"
+    "electron-updater": "^6"
   }
 }

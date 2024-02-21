@@ -2,7 +2,7 @@ import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import { autoUpdater } from 'electron-updater';
 // import * as sqlite3 from "sqlite3"
-import * as permissions from "node-mac-permissions";
+// import * as permissions from "node-mac-permissions";
 
 function createWindow() {
   // Create the browser window.
@@ -28,12 +28,14 @@ app.on("ready", () => {
   createWindow();
   // if (process.env.NODE_ENV !== 'production') {
     const log = require("electron-log")
-    log.transports.file.level = "debug"
+    log.transports.file.level = "verbose"
+    log.transports.console.level = "verbose"
     autoUpdater.logger = log
+    console.log("electron-log path", log.transports.file.getFile())
   // }
 
   autoUpdater.addListener('update-downloaded', () => {
-    autoUpdater.quitAndInstall()
+    // autoUpdater.quitAndInstall()
   })
   // autoUpdater.addAuthHeader(`Bearer ${license?.attributes?.metadata?.token ?? ''}`)
   autoUpdater.checkForUpdatesAndNotify({
