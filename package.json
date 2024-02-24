@@ -10,7 +10,7 @@
     "start": "pnpm build && electron ./out/main.js",
     "app:pack": "electron-builder --config electron-builder-config.js --publish never",
     "app:dist": "electron-builder --config electron-builder-config.js --publish always",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "patch-package && electron-builder install-app-deps"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
@@ -33,9 +33,10 @@
     "@typescript-eslint/parser": "^4.29.2",
     "basic-ftp": "^5.0.4",
     "electron": "^13.1.7",
-    "electron-builder": "^24.13.0",
+    "electron-builder": "^24.13.2",
     "eslint": "^7.32.0",
     "lazy-val": "^1.0.5",
+    "patch-package": "^8.0.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {

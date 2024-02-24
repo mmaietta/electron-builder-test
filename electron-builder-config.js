@@ -33,6 +33,9 @@ const options = {
     //     repo: 'electron-builder-test',
     //     owner: 'mmaietta'
     // },
+    directories: {
+        buildResources: 'build'
+    },
     win: {
         target: [{
             target: 'nsis',
@@ -50,7 +53,7 @@ const options = {
     mac: {
         icon: "icon.icns",
         target: [{
-            target: 'zip',
+            target: 'pkg',
             arch: 'x64'
         }],
         extendInfo: {
@@ -59,6 +62,9 @@ const options = {
         },
         // notarize: true
         // identity: null
+    },
+    pkg: {
+        scripts: null
     },
     linux: {
         icon: "icon.icns",
