@@ -53,7 +53,7 @@ const options = {
     mac: {
         icon: "icon.icns",
         target: [{
-            target: 'pkg',
+            target: 'zip',
             arch: 'x64'
         }],
         extendInfo: {
