@@ -8,6 +8,7 @@
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
     "start": "pnpm build && electron ./out/main.js",
+    "app:linux": "env CI=1 electron-builder --config electron-builder-config.js --linux --x64 --arm64 && find dist/linux-unpacked -name realm.node -exec file {} \\;",
     "app:pack": "electron-builder --config electron-builder-config.js --publish never",
     "app:dist": "electron-builder --config electron-builder-config.js --publish always",
     "postinstall": "patch-package && electron-builder install-app-deps"
@@ -27,13 +28,14 @@
   },
   "license": "CC0-1.0",
   "devDependencies": {
+    "@electron/rebuild": "^3.6.0",
     "@types/node": "^18.7.4",
     "@types/semver": "^7.5.7",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "basic-ftp": "^5.0.4",
     "electron": "^13.1.7",
-    "electron-builder": "^24.13.2",
+    "electron-builder": "^24.13",
     "eslint": "^7.32.0",
     "lazy-val": "^1.0.5",
     "patch-package": "^8.0.0",
@@ -42,6 +44,9 @@
   "dependencies": {
     "dotenv": "^16.4.4",
     "electron-log": "^4.4.1",
-    "electron-updater": "^6"
+    "electron-updater": "^6",
+    "node-mac-permissions": "^2.3.0",
+    "realm": "^12.6.2",
+    "sqlite3": "^5.1.7"
   }
 }

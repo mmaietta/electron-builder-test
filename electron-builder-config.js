@@ -12,8 +12,10 @@ const options = {
     artifactName: "${productName}-${buildVersion}-${arch}.${ext}",
     files: [
         "out",
-        "index.html"
+        "index.html",
+        "!node_modules/node-mac-permissions/bin"
     ],
+    nativeRebuilder: 'parallel',
     // asarUnpack: [
     //     "**.*node",
     //     "node_modules/argparse"
@@ -53,15 +55,15 @@ const options = {
     mac: {
         icon: "icon.icns",
         target: [{
-            target: 'zip',
-            arch: 'x64'
+            target: 'dir',
+            arch: 'universal'
         }],
         extendInfo: {
             NSAppleEventsUsageDescription: 'The app wants to enable auto launch on login.',
             NSCameraUsageDescription: 'The app wants to use the camera.',
         },
-        // notarize: true
-        // identity: null
+        notarize: false,
+        identity: null
     },
     pkg: {
         scripts: null
@@ -76,8 +78,13 @@ const options = {
 
         },
 
-        target: ["deb", "AppImage"]
+        // target: ["deb", "AppImage"]
+        "target": {
+            "arch": ["x64", "arm64"],
+            "target": "dir"
+        }
     },
+
 };
 
 module.exports = options;
