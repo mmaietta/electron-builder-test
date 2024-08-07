@@ -57,7 +57,7 @@ const options = {
 
         },
 
-        target: ["deb"] //, "AppImage", "rpm"]
+        target: ["deb", "AppImage", "rpm", "pacman"]
     },
 };
 
