@@ -43,7 +43,9 @@ const options = {
         }],
         // sign: undefined
         certificateFile: 'Foo Bar.pfx',
-        publisherName: "Foo Bar",
+        signtoolOptions: {
+            publisherName: "Foo Bar",
+        }
     },
     nsis: {
         runAfterFinish: false,
