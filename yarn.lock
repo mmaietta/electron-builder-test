@@ -1116,10 +1116,10 @@ electron-builder@^24.1.2:
     simple-update-notifier "^1.1.0"
     yargs "^17.6.2"
 
-electron-log@^4.4.1:
-  version "4.4.8"
-  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-4.4.8.tgz#fcb9f714dbcaefb6ac7984c4683912c74730248a"
-  integrity sha512-QQ4GvrXO+HkgqqEOYbi+DHL7hj5JM+nHi/j+qrN9zeeXVKy8ZABgbu4CnG+BBqDZ2+tbeq9tUC4DZfIWFU5AZA==
+electron-log@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/electron-log/-/electron-log-5.2.2.tgz#cdb0a6dc48178a7cbacb434a268ab097ad5198dc"
+  integrity sha512-fgvx6srjIHDowJD8WAAjoAXmiTyOz6JnGQoxOtk1mXw7o4S+HutuPHLCsk24xTXqWZgy4uO63NbedG+oEvldLw==
 
 electron-publish@24.1.2:
   version "24.1.2"
