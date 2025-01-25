@@ -12,27 +12,30 @@ const options: Configuration = {
   // artifactName: "%2525SESSIONNAME%2525-${buildVersion}-${arch}.${ext}",
   files: [
     "out",
-    "index.html"
+    "index.html",
+    // "src/Hello.framework/**"
   ],
   // asarUnpack: [
-  //     "**.*node",
-  //     "node_modules/argparse"
+  //     // "**/*.node",
+  //     "**/*.framework/**",
+  //     // "node_modules/argparse"
   // ],
+  electronLanguages: ["en"],
   // publish: {
   //     provider: 'generic',
   //     url: "test.test.com"
   // },
-  // publish: {
-  //     provider: 's3',
-  //     bucket: "test-bucket",
-  //     endpoint: process.platform === 'win32' ? "http://192.168.86.26:9000" : "http://localhost:9000"
-  // },
-  // publish: { provider: "ftp", host, port, user: "user", password: "123" },
   publish: {
-    provider: 'github',
-    repo: 'electron-builder-test',
-    owner: 'mmaietta'
+      provider: 's3',
+      bucket: "test-bucket",
+      endpoint: process.platform === 'win32' ? "http://192.168.86.26:9000" : "https://127.0.0.1:9000"
   },
+  // publish: { provider: "ftp", host, port, user: "user", password: "123" },
+  // publish: {
+  //   provider: 'github',
+  //   repo: 'electron-builder-test',
+  //   owner: 'mmaietta'
+  // },
   // async afterPack(context: AfterPackContext) {
   //     const packager = context.packager
   //     const { platformSpecificBuildOptions, config } = packager
@@ -51,14 +54,15 @@ const options: Configuration = {
   //     // do something with result. output is in config.directories.output dir
   // },
   win: {
-    forceCodeSigning: true,
+    target: ["nsis-web"],
+    // forceCodeSigning: true,
   //     // block signing
   //     sign: (_configuration: CustomWindowsSignTaskConfiguration, _packager: WinPackager | undefined) => {
   //         return Promise.resolve()
   //     }
-  signtoolOptions: {
-    certificateFile: "CN=Foo Bar, O=Foo Bar.pfx"
-  }
+  // signtoolOptions: {
+  //   certificateFile: "CN=Foo Bar, O=Foo Bar.pfx"
+  // }
   },
   nsis: {
     runAfterFinish: undefined,
@@ -69,8 +73,8 @@ const options: Configuration = {
   mac: {
     icon: "icon.icns",
     target: [{
-      target: 'dmg',
-      arch: 'universal'
+      target: 'dir',
+      arch: 'x64'
     }],
     extendInfo: {
       NSAppleEventsUsageDescription: 'The app wants to enable auto launch on login.',
@@ -79,13 +83,18 @@ const options: Configuration = {
     // notarize: true
     identity: null
   },
+  pkg: {
+    // extraPkgsDir: "extra-packages"
+  },
   linux: {
     icon: "icon.icns",
 
 
     desktop: {
+      entry: {
       StartupNotify: "undefined",
       Encoding: "UTF-8",
+      }
 
     },
 

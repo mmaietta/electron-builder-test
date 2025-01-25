@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
-import { autoUpdater } from 'electron-updater';
+import { autoUpdater, UpdateInfo } from 'electron-updater';
 // import * as sqlite3 from "sqlite3"
 // import * as permissions from "node-mac-permissions";
 
@@ -32,6 +32,11 @@ app.on("ready", () => {
     log.transports.console.level = "verbose"
     autoUpdater.logger = log
     console.log("electron-log path", log.transports.file.getFile())
+  // }
+
+  // autoUpdater.isUpdateSupported = (updateInfo: UpdateInfo) => {
+  //   console.log("update info", { updateInfo })
+  //   return true
   // }
 
   autoUpdater.addListener('update-downloaded', () => {
