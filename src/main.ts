@@ -1,8 +1,8 @@
 import { app, BrowserWindow } from "electron";
+import { autoUpdater } from "electron-updater";
 import * as path from "path";
-import { autoUpdater } from 'electron-updater';
-// import * as sqlite3 from "sqlite3"
-// import * as permissions from "node-mac-permissions";
+import * as sqlite3 from "sqlite3";
+// import  * as permissions from "node-mac-permissions";
 
 function createWindow() {
   // Create the browser window.
@@ -27,22 +27,21 @@ function createWindow() {
 app.on("ready", () => {
   createWindow();
   // if (process.env.NODE_ENV !== 'production') {
-    const log = require("electron-log")
-    log.transports.file.level = "verbose"
-    log.transports.console.level = "verbose"
-    autoUpdater.logger = log
-    console.log("electron-log path", log.transports.file.getFile())
+  const log = require("electron-log");
+  log.transports.file.level = "verbose";
+  log.transports.console.level = "verbose";
+  autoUpdater.logger = log;
+  console.log("electron-log path", log.transports.file.getFile());
   // }
 
-  autoUpdater.addListener('update-downloaded', () => {
+  autoUpdater.addListener("update-downloaded", () => {
     // autoUpdater.quitAndInstall()
-  })
+  });
   // autoUpdater.addAuthHeader(`Bearer ${license?.attributes?.metadata?.token ?? ''}`)
   autoUpdater.checkForUpdatesAndNotify({
-    body: 'hellooooo. there is an update',
-    title: "hell yeah"
-  })
-
+    body: "hellooooo. there is an update",
+    title: "hell yeah",
+  });
 
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the
@@ -50,7 +49,7 @@ app.on("ready", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 
-  // const db = new sqlite3.Database('temp.db')
+  const db = new sqlite3.Database("temp.db");
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
