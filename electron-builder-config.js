@@ -60,7 +60,7 @@ const options = {
     // forceCodeSigning: true
   },
   nsis: {
-    include: "./installer.nsh",
+    // include: "./installer.nsh",
     // packElevateHelper: true,
     runAfterFinish: true,
     perMachine: true,
@@ -73,11 +73,13 @@ const options = {
   mac: {
     icon: "icon.icns",
     target: [
-      {
-        target: "zip",
-        arch: "universal",
-      },
-    ],
+      // "arm64",
+      //  "x64",
+        "universal"
+      ].map((arch) => ({
+      target: "dir",
+      arch,
+    })),
     extendInfo: {
       NSAppleEventsUsageDescription:
         "The app wants to enable auto launch on login.",
@@ -103,7 +105,13 @@ const options = {
       },
     },
 
-    target: ["deb", "AppImage"],
+    target: ["snap"].map((target) => ({
+      target,
+      arch: "arm64",
+    }))
+  },
+  snap: {
+    useTemplateApp: false,
   },
 };
 

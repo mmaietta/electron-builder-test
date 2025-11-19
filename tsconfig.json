@@ -3,12 +3,12 @@
     "module": "commonjs",
     "noImplicitAny": true,
     "inlineSourceMap": true,
-    
+    "outDir": "out",
     "baseUrl": ".",
+    "skipLibCheck": false,
     "paths": {
       "*": ["node_modules/*"]
-    },
-    "skipLibCheck": false
+    }
   },
   "include": [
     "src/**/*"

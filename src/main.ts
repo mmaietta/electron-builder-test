@@ -1,8 +1,8 @@
 import { app, BrowserWindow } from "electron";
 import { autoUpdater } from "electron-updater";
 import * as path from "path";
-import * as sqlite3 from "sqlite3";
-// import  * as permissions from "node-mac-permissions";
+// import * as sqlite3 from "sqlite3";
+import  * as permissions from "node-mac-permissions";
 
 function createWindow() {
   // Create the browser window.
@@ -49,7 +49,7 @@ app.on("ready", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 
-  const db = new sqlite3.Database("temp.db");
+  // const db = new sqlite3.Database("temp.db");
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
