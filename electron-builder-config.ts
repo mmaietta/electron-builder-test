@@ -29,16 +29,16 @@ const options: Configuration = {
   //     provider: 'generic',
   //     url: "test.test.com"
   // },
-  electronDownload: {
-    mirrorOptions: {
-      //https://github.com/electron/electron/releases/download/v34.0.2/electron-v34.0.2-darwin-x64.zip
-      // mirror: "https://npmmirror.com/mirrors/electron/", // China
-      customDir: electronVersion,
-      customFilename: `electron-${electronVersion}-darwin-x64.zip`,
-    },
-    unsafelyDisableChecksums: true,
-    // checksums,
-  },
+  // electronDownload: {
+  //   mirrorOptions: {
+  //     //https://github.com/electron/electron/releases/download/v34.0.2/electron-v34.0.2-darwin-x64.zip
+  //     // mirror: "https://npmmirror.com/mirrors/electron/", // China
+  //     customDir: electronVersion,
+  //     customFilename: `electron-${electronVersion}-darwin-x64.zip`,
+  //   },
+  //   unsafelyDisableChecksums: true,
+  //   // checksums,
+  // },
   publish: {
     provider: "s3",
     bucket: "test-bucket",
@@ -97,7 +97,7 @@ const options: Configuration = {
     target: [
       {
         target: "dir",
-        arch: "universal",
+        arch: "arm64",
       },
     ],
     extendInfo: {

@@ -1,0 +1,2 @@
+overrides:
+  app-builder-lib: link:../../Library/pnpm/global/5/node_modules/app-builder-lib
