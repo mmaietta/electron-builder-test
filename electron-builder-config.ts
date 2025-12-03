@@ -1,4 +1,6 @@
 require("dotenv").config();
+require('source-map-support').install();
+
 import { Configuration } from "app-builder-lib";
 const port = 21;
 const host = "0.0.0.0";

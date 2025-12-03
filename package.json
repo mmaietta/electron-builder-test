@@ -39,10 +39,12 @@
     "lazy-val": "^1.0.5",
     "patch-package": "^8.0.0",
     "resedit": "1.7.0",
+    "source-map-support": "^0.5.21",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "app-builder-lib": "link:../../Library/pnpm/global/5/node_modules/app-builder-lib",
+    "canvas": "^3.2.0",
     "dotenv": "^16.4.4",
     "electron-log": "^4.4.1",
     "electron-updater": "^6.4",
