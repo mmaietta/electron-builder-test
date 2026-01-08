@@ -125,23 +125,33 @@ const options: Configuration = {
 
     target: [
       {
-        target: "AppImage",
-        arch: ["x64"],
+        target: "snap",
+        arch: ["arm64"],
       },
-      {
-        target: "deb",
-        arch: ["x64"],
-      },
-      {
-        target: "rpm",
-        arch: ["x64"],
-      },
-      {
-        target: "pacman",
-        arch: ["x64"],
-      },
+      // {
+      //   target: "zip",
+      //   arch: ["x64"],
+      // },
+      // {
+      //   target: "deb",
+      //   arch: ["x64"],
+      // },
+      // {
+      //   target: "rpm",
+      //   arch: ["x64"],
+      // },
+      // {
+      //   target: "pacman",
+      //   arch: ["x64"],
+      // },
     ],
   },
+  deb: {
+    publish: null,
+  },
+  snap: {
+    base: "core24"
+  }
 };
 
 export default options;
