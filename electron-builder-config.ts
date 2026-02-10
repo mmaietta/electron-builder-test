@@ -26,6 +26,9 @@ const options: Configuration = {
     "**/*.framework/**",
     // "node_modules/argparse"
   ],
+  toolsets: {
+    appimage: "1.0.2",
+  },
   electronLanguages: ["en"],
   // publish: {
   //     provider: 'generic',
@@ -99,7 +102,7 @@ const options: Configuration = {
     target: [
       {
         target: "dir",
-        arch: "arm64",
+        arch: "x64",
       },
     ],
     extendInfo: {
@@ -125,7 +128,7 @@ const options: Configuration = {
 
     target: [
       {
-        target: "snap",
+        target: "appimage",
         arch: ["arm64"],
       },
       // {
@@ -149,9 +152,9 @@ const options: Configuration = {
   deb: {
     publish: null,
   },
-  snap: {
-    base: "core24"
-  }
+  // snap: {
+  //   base: "core24"
+  // }
 };
 
 export default options;
